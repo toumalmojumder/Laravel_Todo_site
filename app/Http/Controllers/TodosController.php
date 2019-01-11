@@ -38,5 +38,13 @@ class TodosController extends Controller
            $todo-> save();
            return redirect()->route('todos');
     }
+    public function completed($id)
+    {
+           $todo = Todo::find($id);
+           $todo->completed = 1;
+           $todo-> save();
+           return redirect()->back();
+
+    }
 
 }
